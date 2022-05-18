@@ -9,12 +9,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 export class JobFetchService {
   private apiUrl = 'http://localhost:5000/jobs'
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient)//fetches data from external api in streams
+   { }
 
   getJobs(): Observable<JobInterface[]> {
     //observables are often subscribed to track changes
-    // const jobs = of(JOBS);
-    // return jobs
     return this.httpClient.get<JobInterface[]>(this.apiUrl)
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { JobInterface } from '../../../interface';
 
 @Component({
@@ -9,12 +9,14 @@ import { JobInterface } from '../../../interface';
 export class JobTileComponent implements OnInit {
   //Input is used to get data(property value) from the parent component
   @Input() jobItem !: JobInterface
+  @Output() addFilterArray: EventEmitter<string> = new EventEmitter();
   constructor() { }
-  filters: string[] = [];
+  // filters: string[] = [];
   ngOnInit(): void {
   }
   addFilter(tool: string) {
-    this.filters.push(tool)
-    console.log(this.filters)
+    this.addFilterArray.emit(tool)
+    // this.filters.push(tool)
+    // console.log(this.filters)
   }
 } 

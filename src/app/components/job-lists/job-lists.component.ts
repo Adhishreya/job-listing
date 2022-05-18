@@ -9,11 +9,17 @@ import { JobFetchService } from '../../services/job-fetch.service';
 })
 export class JobListsComponent implements OnInit {
   jobs: JobInterface[] = [];
+  filters: string[] = [];
+  filter!: string;
   //injecting the service into the component
   constructor(private jobLIst: JobFetchService) { }
 
   ngOnInit(): void {
     this.jobLIst.getJobs().subscribe((job) => this.jobs = job);
+  }
+  addFilterItem(filter: string) {
+    this.filters.push(filter);
+    console.log(this.filters)
   }
 
 }
