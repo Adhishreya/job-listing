@@ -1,4 +1,5 @@
-[
+import { JobInterface } from "./interface"
+export const JOBS: JobInterface[] = [
   {
     "id": 1,
     "company": "Photosnap",

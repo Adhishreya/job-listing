@@ -1,0 +1,11 @@
+.button--clear {
+    color: hsl(180, 29%, 50%);
+    font-weight: 500;
+    border: none;
+    background: transparent;
+    font-size: 1.4rem;
+    &:hover{
+        border-bottom: 3px solid hsl(180, 29%, 50%);
+        cursor: pointer;
+    }
+}

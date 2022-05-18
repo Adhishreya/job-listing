@@ -1,0 +1,22 @@
+.card{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    // justify-content: space-between;
+    &__languages{
+        display: flex;
+        justify-self: flex-end;
+    };
+    &__single-line-flex{
+        display: flex;
+        flex-direction: row;
+    };
+    &__multi-line-flex{
+        display: flex;
+        flex-direction: column;
+    };
+    &__image{
+        width:4rem;
+        height:4rem;
+    }
+}

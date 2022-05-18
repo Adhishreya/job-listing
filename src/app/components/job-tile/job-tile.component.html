@@ -1,0 +1,23 @@
+<div class="card">
+    <img alt="{{jobItem.company}} logo" src={{jobItem.logo}} class="card__image" />
+    <div class="card__multi-line-flex">
+        <div class="card__single-line-flex">
+            <div> {{jobItem.company}}</div>
+            <div *ngIf="jobItem.new">New</div>
+            <div *ngIf="jobItem.featured">Featured</div>
+        </div>
+        <div>{{jobItem.position}}</div>
+        <div class="card__single-line-flex">
+            <div>{{jobItem.postedAt}}</div>
+            <div>{{jobItem.contract}}</div>
+            <div>{{jobItem.location}}</div>
+        </div>
+    </div>
+    <div class="card__languages">
+        <div>{{jobItem.role}}</div>
+        <div>{{jobItem.level}}</div>
+        <!-- <app-button text="Clear" className="button--clear" (btnClick)="clearFilter()"></app-button> -->
+        <app-button *ngFor="let tool of jobItem.tools" text={{tool}} (btnClick) = "addFilter()"/>
+        <app-button *ngFor="let lang of jobItem.languages" text={{lang}}/>
+    </div>
+</div>
