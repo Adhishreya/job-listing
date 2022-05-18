@@ -10,10 +10,11 @@ export class JobTileComponent implements OnInit {
   //Input is used to get data(property value) from the parent component
   @Input() jobItem !: JobInterface
   constructor() { }
-
+  filters: string[] = [];
   ngOnInit(): void {
   }
-  addFilter(tool:string){
-    console.log("filter added "+tool)
+  addFilter(tool: string) {
+    this.filters.push(tool)
+    console.log(this.filters)
   }
 } 
