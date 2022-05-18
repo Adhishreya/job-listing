@@ -13,5 +13,7 @@ export class JobTileComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-}
+  addFilter(tool:string){
+    console.log("filter added "+tool)
+  }
+} 

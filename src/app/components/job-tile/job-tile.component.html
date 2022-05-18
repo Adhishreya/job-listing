@@ -17,7 +17,7 @@
         <div>{{jobItem.role}}</div>
         <div>{{jobItem.level}}</div>
         <!-- <app-button text="Clear" className="button--clear" (btnClick)="clearFilter()"></app-button> -->
-        <app-button *ngFor="let tool of jobItem.tools" text={{tool}} (btnClick) = "addFilter()"/>
-        <app-button *ngFor="let lang of jobItem.languages" text={{lang}}/>
+        <app-button *ngFor="let tool of jobItem.tools" text={{tool}} (btnClick) = "addFilter(tool)"></app-button>
+        <app-button *ngFor="let lang of jobItem.languages" text={{lang}} (btnClick) = "addFilter(lang)"></app-button>
     </div>
 </div>
