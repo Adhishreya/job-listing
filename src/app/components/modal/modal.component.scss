@@ -41,6 +41,9 @@
         // box-shadow: 2px 2px 5px rgb(148, 143, 143);
         margin-bottom: 1rem;
         margin-top: 1rem;
+        &:focus{
+            outline:2px solid rgb(119, 114, 114);
+        }
     }
 
 }

@@ -6,32 +6,26 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-  // email!: string;
-  // phone!: string;
-  // checkOutForm = this.formBuilder.group({
-  //   email: '',
-  //   phone: ''
-  // })
 
-  email = new FormControl('')
-  phone = new FormControl('')
-
-  constructor() { }
+  checkOutForm: FormGroup = new FormGroup({
+    email: new FormControl(''),
+    phone: new FormControl('')
+  });
+  constructor() {
+    //variables declated using private access inside the constructor cannot be accessed outside the module nor can a variable declared inside the ngOnInit method can be accessed
+    console.log('constructor called')
+  }
   // private formBuilder: FormBuilder,
-  //             private formGroup :FormGroup
-
+  // private email: FormControl,
+  // private phone: FormControl
   ngOnInit(): void {
+    console.log('form group initalized- ngOnInit called')
   }
 
   onSubmit(): void {
-    console.log(`form submitted ${this.email}`);
+    console.log(`form submitted ${this.checkOutForm.value}`);
   }
 
-  // ngOnChanges(): void {
-  //   console.log('onChanges hook')
-  //   console.log(this.email)
-  // }
-  
   ngOnDestroy(): void {
     console.log('onDestroy hook')
   }

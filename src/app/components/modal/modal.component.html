@@ -1,17 +1,14 @@
 <div class="modal">
     <div class="modal__header">Drop your email for job alerts</div>
-    <!-- [formGroup]="checkOutForm" -->
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" [formGroup]="checkOutForm">
         <label>Email</label>
-        <input class="modal__input" type="email" placeholder="Email" [formControl]="email" />
+        <input class="modal__input" type="email" placeholder="jane.doe@offical.com" formControlName="email" />
         <br />
         <label>Phone number</label>
         <input class="modal__input" type="tel" placeholder="Phone" formControlName="phone" />
         <br />
-        <input type="submit" class="modal__submit" />
+        <input type="submit" class="modal__submit" [disabled]="!checkOutForm.valid"/>
     </form>
-    <!-- <p>{{email.value}}</p> -->
-    <app-button text={{email.value}}></app-button>
 </div>
 <!-- formControlName used to bind the input tage elements with the corresponding formBinding elements in the component file -->
 <!-- ngSubmit is the event binding listen to form submission -->
