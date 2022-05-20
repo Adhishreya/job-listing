@@ -4,10 +4,13 @@
         <label>Email</label>
         <input class="modal__input" type="email" placeholder="jane.doe@offical.com" formControlName="email" />
         <br />
+        <div>or</div>
+        <br/>
         <label>Phone number</label>
         <input class="modal__input" type="tel" placeholder="Phone" formControlName="phone" />
         <br />
-        <input type="submit" class="modal__submit" [disabled]="!checkOutForm.valid"/>
+        <button type="submit" class="modal__submit" [disabled]="!checkOutForm.valid">Submit</button>
+        <p>{{checkOutForm.status}}</p>
     </form>
 </div>
 <!-- formControlName used to bind the input tage elements with the corresponding formBinding elements in the component file -->

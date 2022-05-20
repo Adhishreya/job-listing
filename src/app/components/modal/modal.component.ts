@@ -1,23 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-
-  checkOutForm: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    phone: new FormControl('')
-  });
-  constructor() {
+  checkOutForm: FormGroup = this.formBuilder.group({
+    email: ['',Validators.required],
+    phone: ['']
+  })
+  constructor(private formBuilder: FormBuilder) {
     //variables declated using private access inside the constructor cannot be accessed outside the module nor can a variable declared inside the ngOnInit method can be accessed
     console.log('constructor called')
   }
-  // private formBuilder: FormBuilder,
-  // private email: FormControl,
-  // private phone: FormControl
   ngOnInit(): void {
     console.log('form group initalized- ngOnInit called')
   }
