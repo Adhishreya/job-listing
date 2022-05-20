@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+* {
+    color: hsl(0, 0%, 100%);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.card {
+    background: hsl(213, 19%, 18%);
+    width: 20rem;
+    border-radius: 2%;
+    margin: 10% auto;
+    padding: 2rem;
+
+    &>* {
+        margin-top: 1rem !important;
+    }
+
+    &__start {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        /* background: hsl(216, 12%, 54%); */
+        background: hsl(211, 19%, 23%);
+
+        img {
+            margin: auto;
+        }
+    }
+
+    &__header {
+        font-weight: 700;
+    }
+
+    &__description {
+        font-size: 15px;
+        font-weight: 400;
+        color: hsl(217, 12%, 63%);
+    }
+
+    &__ratings {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: hsl(0, 0%, 100%);
+
+        &>* {
+            width: 2rem;
+            height: 2rem;
+            background: hsl(211, 19%, 23%);
+            border-radius: 50%;
+            color: hsl(217, 12%, 63%);
+            text-align: center;
+        }
+
+        &>*:hover {
+            background: hsl(216, 12%, 54%);
+            cursor: pointer;
+        }
+        &>*:active {
+            background: hsl(25, 97%, 53%);
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        height: 2rem;
+        border-radius: 2rem;
+        text-align: center;
+        color: hsl(0, 0%, 100%);
+        background: hsl(25, 97%, 53%);
+
+        &:active {
+            background: hsl(0, 0%, 100%);
+            color: hsl(25, 97%, 53%);
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

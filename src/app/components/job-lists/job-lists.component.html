@@ -1,5 +1,5 @@
 <div class="container">
-    <app-job-tile *ngFor="let job of jobs" [jobItem]="job" (addFilterArray)="addFilterItem(filter)">
+    <app-job-tile *ngFor="let job of jobs" [jobItem]="job">
         <!-- property binding [] therefore binding property in template expression-->
     </app-job-tile>
 </div>

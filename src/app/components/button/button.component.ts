@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChange } from '@angular/core';
 
 @Component({ //a directive to define components
   selector: 'app-button',
@@ -19,4 +19,9 @@ export class ButtonComponent implements OnInit {
   onClick() {
     this.btnClick.emit();
   }
+
+  // ngChanges(changes: SimpleChange) {
+  //   console.log('the changes are');
+  //   console.log(changes)
+  // }
 }

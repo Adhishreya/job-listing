@@ -1,0 +1,46 @@
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: thistle;
+    width: fit-content;
+    font-weight: 700;
+    margin: auto;
+    padding: 2rem;
+    box-shadow: 2px 2px 5px #000;
+    &__submit{
+        margin-top: 1rem;
+        background: #000;
+        color: aliceblue;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        box-shadow: 2px 2px 5px rgb(148, 143, 143);
+        &:hover{
+            box-shadow: 2px 2px 5px rgb(88, 75, 75);
+        }
+        &:active{
+            box-shadow: 2px 2px 5px rgb(227, 226, 226);
+        }
+    }
+    &__header{
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    &__input{
+        width: 100%;
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 2px solid #000;
+        border-radius: 2px;
+        background: transparent;
+        // box-shadow: 2px 2px 5px rgb(148, 143, 143);
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+}
