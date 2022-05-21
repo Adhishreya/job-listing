@@ -7,9 +7,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class ModalComponent implements OnInit {
   checkOutForm: FormGroup = this.formBuilder.group({
-    email: ['',Validators.required],
+    email: ['', Validators.required],
     phone: ['']
-  })
+  });
+
+  trialText = new FormControl('');
+
   constructor(private formBuilder: FormBuilder) {
     //variables declated using private access inside the constructor cannot be accessed outside the module nor can a variable declared inside the ngOnInit method can be accessed
     console.log('constructor called')
@@ -22,6 +25,10 @@ export class ModalComponent implements OnInit {
     console.log(`form submitted ${this.checkOutForm.value}`);
   }
 
+  onTrySubmit(): void {
+
+  }
+  
   ngOnDestroy(): void {
     console.log('onDestroy hook')
   }
