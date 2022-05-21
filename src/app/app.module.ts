@@ -10,6 +10,8 @@ import { JobListsComponent } from './components/job-lists/job-lists.component';
 import { JobTileComponent } from './components/job-tile/job-tile.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { RatingComponent } from './components/rating/rating.component';
+import { DynamicComponentsComponent } from './demo-components/dynamic-components/dynamic-components.component';
+import { SalaryPipePipe } from './pipes/salary-pipe.pipe';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { RatingComponent } from './components/rating/rating.component';
     JobListsComponent,
     JobTileComponent,
     ModalComponent,
-    RatingComponent
+    RatingComponent,
+    DynamicComponentsComponent,
+    SalaryPipePipe
   ],
   imports: [
     BrowserModule,
