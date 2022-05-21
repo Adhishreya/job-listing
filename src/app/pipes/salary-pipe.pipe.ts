@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SalaryPipePipe implements PipeTransform {
 
-  transform(value: number, ...args: unknown[]): string {
-    return `$${value}`;
+  transform(value: number,tax:number, ...args: unknown[]): string {
+    return `$${value+tax}`;
   }
 
 }
