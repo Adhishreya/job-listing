@@ -19,7 +19,7 @@
 <h3>Tracked list</h3>
 <div *ngFor="let item of array;trackBy:trackByItems">{{item.id}} : {{item.name}}</div>
 
-<h2>ngSwitch,ngSwitchCase and ngSwitchDefault</h2>
+<h2 appHighlight>ngSwitch,ngSwitchCase and ngSwitchDefault</h2>
 <div [ngSwitch]="switchVariableTrial">
     <div *ngSwitchCase = "'ipad'">IPAD</div>
     <div *ngSwitchCase = "'ideapad'">IDEA-PAD</div>

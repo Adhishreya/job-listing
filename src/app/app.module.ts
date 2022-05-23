@@ -12,6 +12,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { DynamicComponentsComponent } from './demo-components/dynamic-components/dynamic-components.component';
 import { SalaryPipePipe } from './pipes/salary-pipe.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SalaryPipePipe } from './pipes/salary-pipe.pipe';
     ModalComponent,
     RatingComponent,
     DynamicComponentsComponent,
-    SalaryPipePipe
+    SalaryPipePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
