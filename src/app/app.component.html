@@ -1,6 +1,14 @@
 <app-header></app-header>
-<app-button text="Clear" className="button--clear" (btnClick)="clearFilter()"></app-button>
-<app-job-lists></app-job-lists>
+<nav>
+    <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/job-apply">Jobs</a></li>
+        <li><a routerLink="/signup">Register/Login</a></li>
+    </ul>
+</nav>
+<app-button *ngIf="hasRoute('/job-apply')" text="Clear" className="button--clear" (btnClick)="clearFilter()"></app-button>
+<router-outlet></router-outlet>
+<!-- <app-job-lists></app-job-lists> -->
 <app-modal></app-modal>
 <app-rating></app-rating>
 <app-dynamic-components></app-dynamic-components>

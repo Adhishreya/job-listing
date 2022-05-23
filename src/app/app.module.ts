@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterModule,Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,7 +14,12 @@ import { RatingComponent } from './components/rating/rating.component';
 import { DynamicComponentsComponent } from './demo-components/dynamic-components/dynamic-components.component';
 import { SalaryPipePipe } from './pipes/salary-pipe.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { SignUpComponent } from './comopnents/sign-up/sign-up.component';
 
+const appRoutes :Routes = [
+  {path:'signup', component:SignUpComponent},
+  {path:'job-apply',component:JobListsComponent}
+]
 
 @NgModule({
   declarations: [
@@ -32,7 +38,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     BrowserModule,
     HttpClientModule,//required to use HttpClient
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes,{enableTracing:true}),
   ],
   providers: [],
   bootstrap: [AppComponent]
