@@ -1,0 +1,27 @@
+<div>Salary {{100|salaryPipe:30}}</div>
+<div [ngClass]="currencyClass">Expenditure {{20.23| currency:'EUR'}}</div>
+<table>
+    <tr>
+        <td [attr.colspan]="colspan">1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+</table>
+
+<label for="name">NAME:</label>
+<!-- <input id="name" [(ngModule)]="name" placeholder="name"/> -->
+<input id="name" [ngModel]="name" (ngModelChange)="detectChange($event)" placeholder="name"/>
+
+<h3>Untracked list</h3>
+<div *ngFor="let item of array;let i =index">{{i+1}} : {{item.name}}</div>
+
+<h3>Tracked list</h3>
+<div *ngFor="let item of array;trackBy:trackByItems">{{item.id}} : {{item.name}}</div>
+
+<h2>ngSwitch,ngSwitchCase and ngSwitchDefault</h2>
+<div [ngSwitch]="switchVariableTrial">
+    <div *ngSwitchCase = "'ipad'">IPAD</div>
+    <div *ngSwitchCase = "'ideapad'">IDEA-PAD</div>
+    <div *ngSwitchDefault>None of the options</div>
+</div>

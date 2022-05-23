@@ -13,3 +13,8 @@ export interface JobInterface {
     languages?:  string[],
     tools?:  string[]
 }
+
+export interface Items{
+    id:number,
+    name:string
+  }

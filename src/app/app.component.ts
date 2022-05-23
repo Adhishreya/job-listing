@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  clearFilter(){
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  clearFilter() {
     console.log('fire clear')
   }
 }
