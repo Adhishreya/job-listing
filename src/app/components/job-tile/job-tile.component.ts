@@ -9,7 +9,8 @@ import { JobInterface } from '../../../interface';
 export class JobTileComponent implements OnInit {
   //Input is used to get data(property value) from the parent component
   @Input() jobItem !: JobInterface
-  // @Output() addFilterArray: EventEmitter<string> = new EventEmitter();
+  @Output() jobDetails: EventEmitter<JobInterface> = new EventEmitter();
+
   constructor() { }
   filters: string[] = [];
   ngOnInit(): void {
@@ -19,5 +20,10 @@ export class JobTileComponent implements OnInit {
     if (!this.filters.includes(tool))
       this.filters.push(tool)
     console.log(this.filters)
+  }
+
+  fetchDetails(jobItem:JobInterface){
+    // console.log(jobItem)
+    this.jobDetails.emit(jobItem);
   }
 } 

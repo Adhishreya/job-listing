@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RouterModule,Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -15,10 +15,13 @@ import { DynamicComponentsComponent } from './demo-components/dynamic-components
 import { SalaryPipePipe } from './pipes/salary-pipe.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { SignUpComponent } from './comopnents/sign-up/sign-up.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
 
-const appRoutes :Routes = [
-  {path:'signup', component:SignUpComponent},
-  {path:'job-apply',component:JobListsComponent}
+const appRoutes: Routes = [
+  { path: 'job:apply/:id', component: JobDetailsComponent },
+  { path: 'signup', component: SignUpComponent },
+  { path: 'job-apply', component: JobListsComponent }
+  // {path:'job-details',component:JobListsComponent}
 ]
 
 @NgModule({
@@ -32,14 +35,15 @@ const appRoutes :Routes = [
     RatingComponent,
     DynamicComponentsComponent,
     SalaryPipePipe,
-    HighlightDirective
+    HighlightDirective,
+    JobDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,//required to use HttpClient
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes,{enableTracing:true}),
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
   ],
   providers: [],
   bootstrap: [AppComponent]

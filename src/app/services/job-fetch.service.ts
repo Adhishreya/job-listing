@@ -10,10 +10,14 @@ export class JobFetchService {
   private apiUrl = 'http://localhost:5000/jobs'
 
   constructor(private httpClient: HttpClient)//fetches data from external api in streams
-   { }
+  { }
 
   getJobs(): Observable<JobInterface[]> {
     //observables are often subscribed to track changes
     return this.httpClient.get<JobInterface[]>(this.apiUrl)
+  }
+
+  getJobById(id: number): Observable<JobInterface> {
+    return this.httpClient.get<JobInterface>(this.apiUrl + "/" + id)
   }
 }
