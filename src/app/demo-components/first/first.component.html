@@ -2,7 +2,15 @@
 <h3>Template driven form</h3>
 <form #formId="ngForm" (ngSubmit)="onSubmit()">
     <label for="id-input">User-Id</label>
-    <input type="text" required [(ngModel)]="id" minlength="5" name="id" id="id-input"/>
-
+    <input type="text" required [(ngModel)]="id" minlength="5" name="id" id="id-input" #idControl="ngModel"/>
+    <div *ngIf="idControl.invalid && (idControl.dirty||idControl.touched)">
+        <!-- <div>invalid entry</div> -->
+        <div *ngIf="idControl.errors?.['required']">
+            This is a required field
+        </div>
+        <div *ngIf="idControl.errors?.['minlength']">
+            Enter a value of minlength 5
+        </div>
+    </div>
     <button type="submit" [disabled]="!formId.form.valid">Submit</button>
 </form>
