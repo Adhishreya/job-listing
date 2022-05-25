@@ -19,9 +19,10 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FirstComponent } from './demo-components/first/first.component';
 import { SecondComponent } from './demo-components/second/second.component';
+import { AccessControlGuard } from './guards/access-control.guard';
 
 const appRoutes: Routes = [
-  { path: 'job-apply/:id', component: JobDetailsComponent },
+  { path: 'job-apply/:id', component: JobDetailsComponent,canActivate:[AccessControlGuard] },
   { path: 'signup', component: SignUpComponent },
   { path: 'job-apply', component: JobListsComponent },
   {
