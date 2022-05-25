@@ -1,4 +1,4 @@
-<div class="card" (click) = "fetchDetails(jobItem)">
+<div class="card" routerLink="./{{jobItem.id}}">
     <img alt="{{jobItem.company}} logo" src={{jobItem.logo}} class="card__image" />
     <div class="card__multi-line-flex">
         <div class="card__single-line-flex">

@@ -2,17 +2,18 @@
 <nav>
     <ul>
         <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/job-apply">Jobs</a></li>
         <li><a routerLink="/signup">Register/Login</a></li>
+        <li><a routerLink="/practice">Practice</a></li>
     </ul>
 </nav>
-<app-button *ngIf="hasRoute('/job-apply')" text="Clear" className="button--clear" (btnClick)="clearFilter()"></app-button>
+<app-button *ngIf="hasRoute('/job-apply')" text="Clear" className="button--clear" (btnClick)="clearFilter()">
+</app-button>
 <router-outlet></router-outlet>
-<!-- <app-job-lists></app-job-lists> -->
-<app-modal></app-modal>
-<app-rating></app-rating>
-<app-dynamic-components></app-dynamic-components>
+
+<ng-container *ngIf="hasRoute('/')">
+    <app-modal></app-modal>
+    <app-rating></app-rating>
+</ng-container>
+
 <!-- <ng-template appExampleZippyContent></ng-template>
 <ng-container [ngTemplateOutlet]="content.templateRef"></ng-container> -->
-
-<!-- <app-dynamic-components></app-dynamic-components> -->

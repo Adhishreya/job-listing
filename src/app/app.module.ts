@@ -14,14 +14,27 @@ import { RatingComponent } from './components/rating/rating.component';
 import { DynamicComponentsComponent } from './demo-components/dynamic-components/dynamic-components.component';
 import { SalaryPipePipe } from './pipes/salary-pipe.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
-import { SignUpComponent } from './comopnents/sign-up/sign-up.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { FirstComponent } from './demo-components/first/first.component';
+import { SecondComponent } from './demo-components/second/second.component';
 
 const appRoutes: Routes = [
-  { path: 'job:apply/:id', component: JobDetailsComponent },
+  { path: 'job-apply/:id', component: JobDetailsComponent },
   { path: 'signup', component: SignUpComponent },
-  { path: 'job-apply', component: JobListsComponent }
-  // {path:'job-details',component:JobListsComponent}
+  { path: 'job-apply', component: JobListsComponent },
+  {
+    path: 'practice',
+    component: DynamicComponentsComponent,
+    children:
+      [
+        {path:'first' ,component:FirstComponent},
+        {path:'second',component:SecondComponent}
+      ]
+  },
+  { path: '', redirectTo: '/job-apply', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ]
 
 @NgModule({
@@ -36,7 +49,10 @@ const appRoutes: Routes = [
     DynamicComponentsComponent,
     SalaryPipePipe,
     HighlightDirective,
-    JobDetailsComponent
+    JobDetailsComponent,
+    PageNotFoundComponent,
+    FirstComponent,
+    SecondComponent
   ],
   imports: [
     BrowserModule,

@@ -30,6 +30,6 @@ export class JobListsComponent implements OnInit {
   //   console.log(this.filters)
   // }
   routeDetails(job: JobInterface) {
-    this.jobList.getJobById(job.id!).subscribe((jobItem) => console.log(jobItem))
+    // this.jobList.getJobById(job.id!).subscribe((jobItem) => console.log(jobItem))
   }
 } 
