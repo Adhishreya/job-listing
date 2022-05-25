@@ -1,1 +1,8 @@
 <p>first works!</p>
+<h3>Template driven form</h3>
+<form #formId="ngForm" (ngSubmit)="onSubmit()">
+    <label for="id-input">User-Id</label>
+    <input type="text" required [(ngModel)]="id" minlength="5" name="id" id="id-input"/>
+
+    <button type="submit" [disabled]="!formId.form.valid">Submit</button>
+</form>
