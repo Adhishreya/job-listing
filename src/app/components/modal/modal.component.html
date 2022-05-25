@@ -1,9 +1,18 @@
-<div class="modal">
+<div [ngClass]="formClassName">
     <div class="modal__header">Drop your email for job alerts</div>
     <form (ngSubmit)="onSubmit()" [formGroup]="checkOutForm">
         <label>Email</label>
-        <input class="modal__input" type="email" placeholder="jane.doe@offical.com" formControlName="email" />
-        <!-- <div *ngIf = "name.invalid && (name.touched || name.dirty)">Must be filled</div> -->
+        <input class="modal__input" type="email" required placeholder="jane.doe@offical.com" formControlName="email" />
+        <div *ngIf="email?.invalid && (email?.touched || email?.dirty)" >
+            <!-- Must be filled -->
+            <div *ngIf="email?.errors?.['required']">
+                This field is required
+            </div>
+            <div *ngIf="email?.errors?.['minlength']">
+                This field is must have length of  atleast 6
+            </div>
+        </div>
+        <!-- #email="ngModel"  -->
         <br />
         <div>or</div>
         <br />
@@ -12,13 +21,6 @@
         <br />
         <button type="submit" class="modal__submit" [disabled]="!checkOutForm.valid">Submit</button>
         <p>{{checkOutForm.status}}</p>
-    </form>
-
-
-    <form (ngSubmit)="onTrySubmit()">
-        <input type="text" placeholder="trial input..." [formControl]="trialText"/>
-        <input type="submit" value="submit" />
-        <app-button text={{trialText.value}}></app-button>
     </form>
 </div>
 <!-- formControlName used to bind the input tage elements with the corresponding formBinding elements in the component file -->

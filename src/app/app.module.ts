@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, UrlMatcher } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -22,7 +22,7 @@ import { SecondComponent } from './demo-components/second/second.component';
 import { AccessControlGuard } from './guards/access-control.guard';
 
 const appRoutes: Routes = [
-  { path: 'job-apply/:id', component: JobDetailsComponent,canActivate:[AccessControlGuard] },
+  { path: 'job-apply/:id', component: JobDetailsComponent, canActivate: [AccessControlGuard] },
   { path: 'signup', component: SignUpComponent },
   { path: 'job-apply', component: JobListsComponent },
   {
@@ -30,8 +30,8 @@ const appRoutes: Routes = [
     component: DynamicComponentsComponent,
     children:
       [
-        {path:'first' ,component:FirstComponent},
-        {path:'second',component:SecondComponent}
+        { path: 'first', component: FirstComponent },
+        { path: 'second', component: SecondComponent }
       ]
   },
   { path: '', redirectTo: '/job-apply', pathMatch: 'full' },
