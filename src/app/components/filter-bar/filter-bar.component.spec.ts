@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DynamicComponentsComponent } from './dynamic-components.component';
+import { FilterBarComponent } from './filter-bar.component';
 
-describe('DynamicComponentsComponent', () => {
-  let component: DynamicComponentsComponent;
-  let fixture: ComponentFixture<DynamicComponentsComponent>;
+describe('FilterBarComponent', () => {
+  let component: FilterBarComponent;
+  let fixture: ComponentFixture<FilterBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DynamicComponentsComponent ]
+      declarations: [ FilterBarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DynamicComponentsComponent);
+    fixture = TestBed.createComponent(FilterBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

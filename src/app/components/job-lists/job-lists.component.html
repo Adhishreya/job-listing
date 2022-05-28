@@ -1,5 +1,11 @@
+<div class="filter-bar">
+    <app-filter-bar *ngFor="let filter of filters" [filter]="filter" (removeFilter)="removeFilter($event)"></app-filter-bar>
+    <app-button *ngIf="filters.length>0" text="Clear" className="button--clear" (btnClick)="clearFilter()"></app-button>
+</div>
+
 <div class="container">
-    <app-job-tile *ngFor="let job of jobs" [jobItem]="job">
+    <app-job-tile *ngFor="let job of jobs" [jobItem]="job" (addFilterArray)="checkFilter($event)">
         <!-- property binding [] therefore binding property in template expression-->
+        <!-- $event contains the data that the cild emits as a parameter -->
     </app-job-tile>
 </div>

@@ -10,9 +10,9 @@ import { JobListsComponent } from './components/job-lists/job-lists.component';
 import { JobTileComponent } from './components/job-tile/job-tile.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { RatingComponent } from './components/rating/rating.component';
-import { DynamicComponentsComponent } from './demo-components/dynamic-components/dynamic-components.component';
 import { SalaryPipePipe } from './pipes/salary-pipe.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 
 
 @NgModule({
@@ -24,9 +24,9 @@ import { HighlightDirective } from './directives/highlight.directive';
     JobTileComponent,
     ModalComponent,
     RatingComponent,
-    DynamicComponentsComponent,
     SalaryPipePipe,
-    HighlightDirective
+    HighlightDirective,
+    FilterBarComponent
   ],
   imports: [
     BrowserModule,

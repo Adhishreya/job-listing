@@ -1,0 +1,11 @@
+.tab{
+    display: flex;
+    width: fit-content;
+    &--name{
+        color: hsl(180, 29%, 50%);
+        background: hsl(180, 52%, 96%);
+        padding: 0.5rem 1rem;
+        margin: 0rem 1rem;
+        display: flex;
+    }
+}

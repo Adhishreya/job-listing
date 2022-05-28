@@ -9,7 +9,4 @@ export class AppComponent {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
-  clearFilter() {
-    console.log('fire clear')
-  }
 }

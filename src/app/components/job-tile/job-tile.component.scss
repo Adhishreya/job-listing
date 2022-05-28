@@ -1,22 +1,73 @@
-.card{
-    width: 100%;
+$media-break-point-small:768px;
+.card{ 
+    width: 90%;
+    margin: 0.5rem auto;
     margin-top: 2rem;
     display: flex;
-    // justify-content: space-between;
+    background: hsl(0, 0%, 100%);
+    padding: 1rem 0.5rem;
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px hsl(180, 52%, 96%);
+    @media  (max-width: $media-break-point-small) {
+        flex-direction: column;
+    }
     &__languages{
         display: flex;
+        width: 30%;
         justify-self: flex-end;
+        justify-content: space-between;
+        height: fit-content;
+        @media  (max-width: $media-break-point-small) {
+            width: 90%;
+            margin-top: 2rem;
+            margin-left: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            &>*{
+                margin-top: 1rem;
+            }
+            border-top: 0.1rem solid hsl(180, 2%, 75%);
+        }
     };
     &__single-line-flex{
         display: flex;
+        font-weight: 300;
+        color: hsl(180, 8%, 52%);
+        // justify-content: space-between;
+        // width: 1rem;
         flex-direction: row;
+        &>*{
+            margin: 0rem 1rem
+        }
     };
     &__multi-line-flex{
         display: flex;
+        justify-content: space-between;
+        width: 60%;
         flex-direction: column;
+        @media  (max-width: $media-break-point-small) {
+            width: 100%;
+            margin-top: 2rem;
+            margin-left: 1rem;
+            height: 6rem;
+        }
     };
     &__image{
         width:4rem;
+        margin: 1rem;
         height:4rem;
+    }
+    &:hover{
+        border-left: solid 0.5rem hsl(180, 29%, 50%);
+    }
+    &--name{
+        font-weight: 300;
+        color: hsl(180, 29%, 50%);
+    }
+    .role{
+        font-weight: 700;
+        color: hsl(180, 29%, 50%);
+        margin-left: 1rem;
+        font-size: 15px;
     }
 }
