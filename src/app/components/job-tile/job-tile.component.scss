@@ -33,8 +33,6 @@ $media-break-point-small:768px;
         display: flex;
         font-weight: 300;
         color: hsl(180, 8%, 52%);
-        // justify-content: space-between;
-        // width: 1rem;
         flex-direction: row;
         &>*{
             margin: 0rem 1rem
