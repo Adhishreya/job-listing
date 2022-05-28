@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule, Routes, UrlMatcher } from '@angular/router';
 
@@ -61,6 +61,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    HttpClientJsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

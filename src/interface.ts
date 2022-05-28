@@ -18,3 +18,9 @@ export interface Items{
     id:number,
     name:string
   }
+
+export interface Users {
+    userId: number,
+    id: number,
+    title: string
+  }

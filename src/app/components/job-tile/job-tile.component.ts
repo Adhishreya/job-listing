@@ -22,7 +22,7 @@ export class JobTileComponent implements OnInit {
     console.log(this.filters)
   }
 
-  fetchDetails(jobItem:JobInterface){
+  fetchDetails(jobItem: JobInterface) {
     // console.log(jobItem)
     this.jobDetails.emit(jobItem);
   }

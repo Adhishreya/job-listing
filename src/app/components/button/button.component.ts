@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChange, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({ //a directive to define components
   selector: 'app-button',
@@ -12,6 +12,11 @@ export class ButtonComponent implements OnInit {
   @Output() btnClick = new EventEmitter();//can be used when the componenet is being re-used and in each instance it has a different function
   //since it is declared as an Output()  it implies that the event triggers the parent component
   constructor() { }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   // throw new Error('Method not implemented.');
+  //   console.log('the changes are');
+  //   console.log(changes)
+  // }
 
   ngOnInit(): void {
   }
@@ -19,9 +24,4 @@ export class ButtonComponent implements OnInit {
   onClick() {
     this.btnClick.emit();
   }
-
-  // ngChanges(changes: SimpleChange) {
-  //   console.log('the changes are');
-  //   console.log(changes)
-  // }
 }
