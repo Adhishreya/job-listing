@@ -14,15 +14,9 @@ export class JobTileComponent implements OnInit {
 
   @Output() addFilterArray: EventEmitter<string> = new EventEmitter();
   constructor() { }
-  // filters: string[] = [];
   ngOnInit(): void {
   }
   addFilter(tool: string) {
     this.addFilterArray.emit(tool);
-    // this.addFilterArray.emit(tool)
-    // if (!this.filters.includes(tool))
-    //   this.filters.push(tool)
-    // console.log(this.filters)
   }
-  // addFilterArray()
 } 

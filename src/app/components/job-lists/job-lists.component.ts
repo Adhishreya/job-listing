@@ -10,7 +10,6 @@ import { JobFetchService } from '../../services/job-fetch.service';
 export class JobListsComponent implements OnInit {
   jobs: JobInterface[] = [];
   filters: string[] = [];
-  // filter!: string;
   filterValue!: string;
   //injecting the service into the component
   constructor(private jobLIst: JobFetchService) { }
@@ -18,19 +17,13 @@ export class JobListsComponent implements OnInit {
   ngOnInit(): void {
     this.jobLIst.getJobs().subscribe((job) => this.jobs = job);
   }
-  // addFilterItem(filter: string) {
-  //   this.filters.push(filter);
-  //   console.log(this.filters)
-  // }
   checkFilter(value: string) {
-    // console.log(value);
     if (!this.filters.includes(value))
       this.filters.push(value);
     console.log(this.filters);
   }
 
   clearFilter() {
-    // console.log('fire clear')
     this.filters = [];
   }
   removeFilter(event: string) {

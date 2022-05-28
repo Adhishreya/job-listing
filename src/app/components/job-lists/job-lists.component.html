@@ -1,6 +1,10 @@
-<div class="filter-bar">
-    <app-filter-bar *ngFor="let filter of filters" [filter]="filter" (removeFilter)="removeFilter($event)"></app-filter-bar>
-    <app-button *ngIf="filters.length>0" text="Clear" className="button--clear" (btnClick)="clearFilter()"></app-button>
+<div class="filter--main">
+    <div class="filter--bar">
+        <app-filter-bar *ngFor="let filter of filters" [filter]="filter" (removeFilter)="removeFilter($event)">
+        </app-filter-bar>
+    </div>
+    <app-button *ngIf="filters.length>0" text="Clear" className="button--clear" (btnClick)="clearFilter()">
+    </app-button>
 </div>
 
 <div class="container">

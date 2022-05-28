@@ -4,16 +4,22 @@
     flex-direction: column;
 }
 
-.filter-bar {
-    width: 90%;
-    margin: 0.5rem auto;
-    margin-top: 2rem;
-    // display: flex;
-    display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(50px, 100px));
-    grid-gap: 1rem;
-    background: hsl(0, 0%, 100%);
-    padding: 1rem 0.5rem;
-    border-radius: 4px;
-    box-shadow: 2px 2px 10px hsl(180, 52%, 96%);
+.filter {
+    &--main{
+        width: 90%;
+        margin: 0.5rem auto;
+        margin-top: 2rem;
+        position: relative;
+        background: hsl(0, 0%, 100%);
+        padding: 1rem 0.5rem;
+        border-radius: 4px;
+        display: flex;
+        box-shadow: 2px 2px 10px hsl(180, 52%, 96%);
+    }
+    &--bar {
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 100px));
+        grid-gap: 1rem;        
+    }
 }
