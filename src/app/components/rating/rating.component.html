@@ -1,14 +1,55 @@
 <div class="card">
-    <div class="card__start"><img src="./images/icon-star.svg" alt="star" /></div>
-    <div class="card__header">How did we do?</div>
-    <div class="card__description"> Please let us know how we did with your support request. All feedback is appreciated
-        to help us improve our offering!</div>
-    <div class="card__ratings">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
+    <div class="card__form"  *ngIf="!display">
+        <div class="card__start"><img src="./images/icon-star.svg" alt="star" /></div>
+        <div class="card__header">How did we do?</div>
+        <div class="card__description"> Please let us know how we did with your support request. All feedback is
+            appreciated
+            to help us improve our offering!</div>
+        <form #card="ngForm" (ngSubmit)="onSubmit()">
+            <!-- <input /> -->
+            <div class="card__ratings">
+                <!-- <div *ngFor="let val of array">
+                    <input class="card__input" id="rateId+val" type="radio" value={{val}} [(ngModel)]="value" #rateControl="ngModel" name="rate"/>
+                    <label class="card--rating" for="rateId+val">{{val|convertData}}</label>
+                </div> -->
+                <!-- <div type="radio" *ngFor="let val of array" (click)="getValue(val)"  class="card--rating">{{val|convertData}} </div> -->
+                <input required class="card__input" id="1" type="radio" value={{1}} [(ngModel)]="value"
+                    #rateControl="ngModel" name="rate" />
+                <label class="card--rating" for="1">1</label>
+                <input required class="card__input" id="2" type="radio" value={{2}} [(ngModel)]="value"
+                    #rateControl="ngModel" name="rate" />
+                <label class="card--rating" for="2">2</label>
+                <input required class="card__input" id="3" type="radio" value={{3}} [(ngModel)]="value"
+                    #rateControl="ngModel" name="rate" />
+                <label class="card--rating" for="3">3</label>
+                <input required class="card__input" id="4" type="radio" value={{4}} [(ngModel)]="value"
+                    #rateControl="ngModel" name="rate" />
+                <label class="card--rating" for="4">4</label>
+                <input required class="card__input" id="5" type="radio" value={{5}} [(ngModel)]="value"
+                    #rateControl="ngModel" name="rate" />
+                <label class="card--rating" for="5">5</label>
+                <!-- <button (click)="getValue(10)" class="card--rating">ads</button>  -->
+            </div>
+            <button class="card__footer" type="submit" [disabled]="!card.form.valid">Submit</button>
+        </form>
     </div>
-    <div class="card__footer">Submit</div>
+
+    <div class="submit__success" *ngIf="display">
+        <!-- *ngIf="display" -->
+        <img class="submit__img" src="./images/illustration-thank-you.svg" alt="thank you image">
+        <div class="submit__result">You selected {{display}} out of 5</div>
+        <span class="submit__footer">We appreciate your taking time to give a rating</span>
+        <span class="submit__footer">If you ever need more support, don't hesitate to get in touch</span>
+    </div>
+    <!-- <div class="card__ratings">
+            <div *ngFor="let val of array" (click)="getValue(val)"  class="card--rating">{{val|convertData}} </div>
+            <div (click)="getValue(1)" class="card--rating">1</div>
+            <div (click)="getValue(2)" class="card--rating">2</div>
+            <div (click)="getValue(3)" class="card--rating">3</div>
+            <div (click)="getValue(4)" class="card--rating">4</div>
+            <div (click)="getValue(5)" class="card--rating">5</div>
+            <button (click)="getValue(10)" class="card--rating">ads</button>
+        </div>
+        <div class="card__footer">Submit</div> -->
+
 </div>

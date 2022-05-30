@@ -1,0 +1,87 @@
+$media-break-point-medium: 768px;
+$media-break-point-small: 600px;
+
+.nav {
+    &__main {
+        display: flex;
+        list-style: none;
+        background: hsl(180, 29%, 50%);
+        padding: 2rem 0.5rem;
+        border-radius: 4px;
+        position: relative;
+        width: 100% !important;
+        z-index: 1;
+        box-shadow: 2px 2px 10px hsl(180, 52%, 96%);
+    }
+
+    &__sub {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        position: absolute;
+        right: 1rem;
+        display: flex;
+
+        @media (max-width: $media-break-point-small) {
+            display: none;
+            flex-direction: column;
+            top: 5rem;
+        }
+
+        // @media  (max-width: $media-break-point-small) {
+        //     width: 80%;
+        //     margin: 0rem 0.2rem;
+        //     right: 0rem;
+        // }
+    }
+
+    &__list {
+        cursor: pointer;
+        margin: 0rem 1rem;
+        background: hsl(180, 29%, 50%);
+        color: hsl(180, 52%, 96%);
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__anchor {
+        color: hsl(180, 52%, 96%);
+        padding: 0.3rem;
+        border-radius: 4px;
+        border: none;
+        background: hsl(180, 14%, 20%);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 2rem;
+    position: absolute;
+    border: none;
+    right: 1rem;
+    background: transparent;
+
+    @media (min-width: $media-break-point-small) {
+        display: none;
+    }
+
+    >* {
+        width: 100%;
+        height: 0.2rem;
+        background: hsl(0, 0%, 0%);
+        margin-top: 0.3rem;
+    }
+
+    &:active+.nav__sub {
+        display: flex;
+        width: 100%;
+        padding: 2rem 0.5rem;
+    }
+}

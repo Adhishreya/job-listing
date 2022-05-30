@@ -1,7 +1,9 @@
 <app-header></app-header>
-<app-job-lists></app-job-lists>
-<app-modal></app-modal>
-<app-rating></app-rating>
+<router-outlet></router-outlet>
+<ng-container>
+    <app-modal *ngIf="hasRoute('/job-list')"></app-modal>
+</ng-container>
+
 <!-- <ng-template appExampleZippyContent></ng-template>
 <ng-container [ngTemplateOutlet]="content.templateRef"></ng-container> -->
 

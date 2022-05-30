@@ -1,0 +1,84 @@
+.job {
+    width: 90%;
+    margin: auto;
+
+    &__header {
+        display: flex;
+    }
+
+    &__logo {
+        margin-right: 20px;
+        margin: 2rem;
+
+        &--name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 3rem;
+
+        }
+    }
+
+    &__language {
+        span {
+            // margin: 1rem 0rem;
+            font-weight: 700;
+            color: hsl(180, 14%, 20%);
+        }
+
+        // width: 90%;
+        margin: 1rem;
+
+        &__items {
+            display: flex;
+            width: 10%;
+            justify-self: flex-end;
+            justify-content: space-between;
+            height: fit-content;
+        }
+
+    }
+
+    &__description {
+        flex-direction: column;
+        display: flex;
+        // width: 90%;
+        margin: 1rem;
+
+        span {
+            margin: 1rem 0rem;
+            font-weight: 700;
+            color: hsl(180, 14%, 20%);
+        }
+    }
+
+    &__tags {
+        margin: 3rem 0rem;
+    }
+
+    &__tools{
+        span{
+            margin:1rem;
+            font-weight: 700;
+            color: hsl(180, 14%, 20%);
+        }
+        &__items{
+            margin: 0rem 1rem;
+            display: flex;
+            width: 10%;
+            justify-self: flex-end;
+            justify-content: space-between;
+            height: fit-content;
+        }
+    }
+
+    &__role,
+    &__level,
+    &__position{
+        margin: 1rem 0rem;
+        span {
+            margin: 1rem;
+            font-weight: 700;
+            color: hsl(180, 14%, 20%);
+        }
+    }
+}

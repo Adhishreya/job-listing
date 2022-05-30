@@ -11,7 +11,8 @@ export interface JobInterface {
     contract?:  string,
     location?:  string,
     languages?:  string[],
-    tools?:  string[]
+    tools?:  string[],
+    description?:string
 }
 
 export interface Items{

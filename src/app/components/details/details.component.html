@@ -1,0 +1,35 @@
+<div class="job">
+    <div class="job__header">
+        <img class="job__logo" src={{job.logo}} />
+        <div class="job__logo--name">{{job.company}}</div>
+        <div class="job__tags">
+            <app-button className="button--filter" text={{job.location}}></app-button>
+            <app-button className="button--filter" text={{job.contract}}></app-button>
+        </div>
+
+    </div>
+
+    <div class="job__level"><span>Experience</span> : {{job.level}}</div>
+    <div class="job__role"><span>Role</span> : {{job.role}}</div>
+    <div class="job__position"><span>Position</span> : {{job.position}}</div>
+    <div class="job__language">
+        <span>Preferred knowledge of languages</span>
+        <div class="job__language__items">
+            <app-button className="button--filter" *ngFor="let lang of job.languages" text={{lang}}></app-button>
+        </div>
+    </div>
+    <div *ngIf="job.tools!.length>0" class="job__tools">
+        <span>Tools</span>
+        <div class="job__tools__items">
+            <app-button className="button--filter" *ngFor="let tool of job.tools" text={{tool}}></app-button>
+        </div>
+    </div>
+    <div class="job__description">
+        <span>Job Description</span>
+        {{job.description}}
+    </div>
+
+    <div>
+        <app-button className="button--apply" text="Upload Resume"></app-button>
+    </div>
+</div>

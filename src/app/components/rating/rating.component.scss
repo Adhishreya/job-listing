@@ -7,13 +7,15 @@
 
 .card {
     background: hsl(213, 19%, 18%);
-    width: 20rem;
+    width: 22rem;
     border-radius: 2%;
     margin: 10% auto;
     padding: 2rem;
 
-    &>* {
-        margin-top: 1rem !important;
+    &__form {
+        &>* {
+            margin-top: 1rem !important;
+        }
     }
 
     &__start {
@@ -23,7 +25,6 @@
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        /* background: hsl(216, 12%, 54%); */
         background: hsl(211, 19%, 23%);
 
         img {
@@ -46,23 +47,35 @@
         justify-content: space-between;
         align-items: center;
         color: hsl(0, 0%, 100%);
+        margin: 1rem 0rem;
+    }
 
-        &>* {
-            width: 2rem;
-            height: 2rem;
-            background: hsl(211, 19%, 23%);
-            border-radius: 50%;
-            color: hsl(217, 12%, 63%);
-            text-align: center;
-        }
+    &--rating {
+        width: 2.5rem;
+        height: 2.5rem;
+        background: hsl(211, 19%, 23%);
+        border-radius: 50%;
+        color: hsl(217, 11%, 77%);
+        padding: 0.8rem;
+        text-align: center;
+        border: none;
 
-        &>*:hover {
-            background: hsl(216, 12%, 54%);
+        &:hover {
+            background: hsl(219, 6%, 49%);
             cursor: pointer;
         }
-        &>*:active {
+
+        &:active {
             background: hsl(25, 97%, 53%);
         }
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__input:checked+&--rating {
+        background: hsl(25, 97%, 53%);
     }
 
     &__footer {
@@ -70,15 +83,57 @@
         height: 2rem;
         border-radius: 2rem;
         text-align: center;
+        padding: 0.5rem 0rem;
         color: hsl(0, 0%, 100%);
         background: hsl(25, 97%, 53%);
+        border: none;
 
         &:active {
-            background: hsl(0, 0%, 100%);
-            color: hsl(25, 97%, 53%);
+            // background: hsl(0, 0%, 100%);
+            // color: hsl(25, 97%, 53%);
         }
-        &:hover{
+
+        &:hover {
             cursor: pointer;
         }
+
+    }
+
+    &__input:checked~.card__footer {
+        background: hsl(25, 97%, 53%) !important;
+    }
+}
+
+.submit {
+    &__success {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__img {
+        width: 80%;
+        // height: 5rem;
+        margin: 1rem auto;
+    }
+
+    &__result {
+        background: rgb(125, 122, 122);
+        color: hsl(25, 97%, 53%);
+        border-radius: 5px;
+        font-weight: 100;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        margin: auto;
+    }
+
+    &__footer {
+        width: 100%;
+        padding: 0rem 1rem;
+        text-align: center;
+        font-weight: 100;
+        margin: 0.5rem auto;
+        font-size: small;
     }
 }

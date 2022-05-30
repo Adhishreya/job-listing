@@ -1,3 +1,16 @@
-<header>
-    <h1>{{title}}</h1>
-</header>
+<nav class="nav__main">
+    <header>
+        <h1>{{title}}</h1>
+    </header>
+    <button class="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav__sub">
+        <!-- <li class="nav__list"><a class="nav__anchor">{{title}}</a></li> -->
+        <li class="nav__list"><a class="nav__anchor" routerLink="/job-list">Find Work </a></li>
+        <li class="nav__list"><a class="nav__anchor" routerLink="/messages">Messages</a></li>
+        <li class="nav__list"><a class="nav__anchor" routerLink="/register">Login/Register</a></li>
+    </ul>
+</nav>

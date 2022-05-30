@@ -9,9 +9,11 @@ export class ButtonComponent implements OnInit {
 
   @Input() text!: string;
   @Input() className!: string;
+  @Input() value!:string;
   @Output() btnClick = new EventEmitter();//can be used when the componenet is being re-used and in each instance it has a different function
   //since it is declared as an Output()  it implies that the event triggers the parent component
   constructor() { }
+  
 
   ngOnInit(): void {
   }

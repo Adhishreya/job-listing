@@ -29,6 +29,21 @@
         }
     }
 
+    &--apply {
+        background: hsl(180, 29%, 50%);
+        color: hsl(180, 52%, 96%);
+        margin: 1rem;
+        padding: 1rem;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+            color: hsl(180, 29%, 50%);
+            background: hsl(180, 52%, 96%);
+            border: 2px solid hsl(180, 29%, 50%);
+        }
+    }
+
     &--featured {
         color: hsl(180, 52%, 96%);
         font-weight: 300;
@@ -64,7 +79,8 @@
         padding: 0rem 0.5rem;
         margin-left: 0.5rem;
         height: 2rem;
-        border-radius: 0px 4px 4px 0px;;
+        border-radius: 0px 4px 4px 0px;
+        ;
         position: relative;
         top: -0.5rem;
         border: none;

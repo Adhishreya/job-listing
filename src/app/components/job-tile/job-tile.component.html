@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" >
     <img alt="{{jobItem.company}} logo" src={{jobItem.logo}} class="card__image" />
     <div class="card__multi-line-flex">
         <div class="card__single-line-flex">
@@ -13,10 +13,16 @@
             <div>{{jobItem.location}}</div>
         </div>
     </div>
-    <div class="card__languages">
-        <app-button className="button--filter" text={{jobItem.role}} (btnClick) = "addFilter(jobItem.role!)"></app-button>
-        <app-button className="button--filter" text={{jobItem.level}} (btnClick) = "addFilter(jobItem.level!)"></app-button>
-        <app-button className="button--filter" *ngFor="let tool of jobItem.tools" text={{tool}} (btnClick) = "addFilter(tool)"></app-button>
-        <app-button className="button--filter" *ngFor="let lang of jobItem.languages" text={{lang}} (btnClick) = "addFilter(lang)"></app-button>
+
+    <div class="card--right">
+        <div class="card__languages">
+            <app-button className="button--filter" text={{jobItem.role}} (btnClick) = "addFilter(jobItem.role!)"></app-button>
+            <app-button className="button--filter" text={{jobItem.level}} (btnClick) = "addFilter(jobItem.level!)"></app-button>
+            <app-button className="button--filter" *ngFor="let tool of jobItem.tools" text={{tool}} (btnClick) = "addFilter(tool)"></app-button>
+            <app-button className="button--filter" *ngFor="let lang of jobItem.languages" text={{lang}} (btnClick) = "addFilter(lang)"></app-button>
+        </div>    
+        <a class="apply" routerLink="./details/{{jobItem.id}}">Apply</a>
     </div>
+
+    
 </div>
