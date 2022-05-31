@@ -1,0 +1,106 @@
+$media-break-point-medium: 768px;
+$media-break-point-small: 600px;
+
+.card {
+    background: hsl(213, 19%, 18%);
+    width: 70%;
+    border-radius: 2%;
+    margin: 1rem auto;
+    padding: 2rem;
+    display: flex;
+
+    @media (max-width: $media-break-point-small) {
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: 1rem 0rem;
+        padding: 0;
+    }
+
+    &__image {
+        width: 50%;
+
+        @media (max-width: $media-break-point-small) {
+            width: 100%;
+        }
+    }
+
+    .input {
+        border: none;
+        background: transparent;
+        color: aliceblue;
+        font-weight: 700;
+        border-radius: 1rem;
+        padding: 1.5rem 1rem;
+        width: 100%;
+
+        &:focus {
+            border: 0.2rem solid hsl(242, 89%, 49%);
+        }
+    }
+
+    &__register,
+    &__login {
+        width: 50%;
+        padding: 2rem;
+
+        @media (max-width: $media-break-point-small) {
+            width: 100%;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    &__method {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__inline {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    &__multiline {
+        display: flex;
+        width: 95%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__format {
+        position: relative;
+        margin: 1rem;
+        border-radius: 1rem;
+        // overflow-x: hidden;
+        width: 100%;
+        // box-shadow: hsl(212, 77%, 83%) 0 0 0.1rem;
+        background: hsl(212, 12%, 21%);
+
+        .label {
+            color: rgb(180, 193, 204);
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 1rem;
+            font-size: small;
+        }
+
+        // &:active , &:focus{
+        //     border: 2px solid hsl(242, 89%, 49%);
+        // }
+    }
+}
+.alert{
+    &--error{
+        color: red;
+        position: relative;
+        top: 1rem;
+        z-index: 1;
+    }
+}

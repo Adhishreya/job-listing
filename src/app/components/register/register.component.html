@@ -1,1 +1,125 @@
-<p>register works!</p>
+<div class="card">
+    <div class="card__register" *ngIf="!login">
+        <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <div class="form__inline">
+                <div class="form__format">
+                    <label class="label" for="firstname">Firstname</label>
+                    <input class="input " type="text" id="firstname" formControlName="firstname" />
+                    <div *ngIf="formControls['firstname'].invalid && (formControls['firstname'].dirty || formControls['firstname'].touched)"
+                        class="alert--error">
+                        <div *ngIf="formControls['firstname'].errors && formControls['firstname'].errors['required']">!
+                            This field is required</div>
+                        <div *ngIf="formControls['firstname'].errors && formControls['firstname'].errors['minlength']">!
+                            Minimum of 3 characters</div>
+                    </div>
+                </div>
+                <div class="form__format">
+                    <label class="label" for="lastname">Lastname</label>
+                    <input class="input " type="text" id="lastname" formControlName="lastname" />
+                    <div *ngIf="formControls['lastname'].invalid && (formControls['lastname'].dirty || formControls['lastname'].touched)"
+                        class="alert--error">
+                        <div *ngIf="formControls['lastname'].errors && formControls['lastname'].errors['required']">!
+                            This field is required</div>
+                        <div *ngIf="formControls['lastname'].errors && formControls['lastname'].errors['minlength']">!
+                            Minimum of 3 characters</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__multiline">
+                <div class="form__format">
+                    <label class="label" for="email">Email</label>
+                    <input class="input " type="email" id="email" formControlName="email" />
+                    <div *ngIf="formControls['email'].invalid && (formControls['email'].dirty || formControls['email'].touched)"
+                        class="alert--error">
+                        <div *ngIf="formControls['email'].errors && formControls['email'].errors['required']">!
+                            This field is required</div>
+                        <div *ngIf="formControls['email'].errors && formControls['email'].errors['minlength']">!
+                            Minimum of 8 characters</div>
+                        <div *ngIf="formControls['email'].errors && formControls['email'].errors['pattern']">!
+                            Enter a valid email id</div>
+                    </div>
+                </div>
+                <div class="form__format">
+                    <label class="label" for="password">New Password</label>
+                    <input class="input " type="password" autocomplete id="password" formControlName="password" />
+                    <div *ngIf="formControls['password'].invalid && (formControls['password'].dirty || formControls['password'].touched)"
+                        class="alert--error">
+                        <div *ngIf="formControls['password'].errors && formControls['password'].errors['required']">!
+                            This field is required</div>
+                        <div *ngIf="formControls['password'].errors && formControls['password'].errors['minlength']">!
+                            Minimum of 8 characters</div>
+                    </div>
+                </div>
+                <div class="form__format">
+                    <label class="label" for="confirm-password">Confirm Password</label>
+                    <input class="input " type="password" autocomplete id="confirm-password"
+                        formControlName="confirmPassword" />
+                    <div *ngIf="formControls['confirmPassword'].invalid && (formControls['confirmPassword'].dirty || formControls['confirmPassword'].touched)"
+                        class="alert--error">
+                        <div
+                            *ngIf="formControls['confirmPassword'].errors && formControls['confirmPassword'].errors['required']">
+                            !
+                            This field is required</div>
+                        <div
+                            *ngIf="formControls['confirmPassword'].errors && formControls['confirmPassword'].errors['minlength']">
+                            !
+                            Minimum of 8 characters</div>
+                        <div
+                            *ngIf="formControls['confirmPassword'].errors && formControls['confirmPassword'].errors['unmatchedPassword']">
+                            The passwords must match
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__method">
+                <!--  -->
+                <app-button className="button--method" text="Change Method" (btnClick)="changeMethod()"></app-button>
+                <app-button className="button--submit" disabled="!formGroup.valid" text="Create Account" type="submit">
+                </app-button>
+            </div>
+            <!-- <div>{{formGroup.valid}}</div> -->
+        </form>
+    </div>
+    <div class="card__login" *ngIf="login">
+        <form class="form" [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+            <div class="form__multiline">
+                <div class="form__format">
+                    <label class="label" for="email">Email</label>
+                    <input class="input " type="email" id="email" formControlName="email" />
+                    <div *ngIf="loginFormGroup.controls['email'].invalid && (loginFormGroup.controls['email'].dirty || loginFormGroup.controls['email'].touched)"
+                        class="alert--error">
+                        <div
+                            *ngIf="loginFormGroup.controls['email'].errors && loginFormGroup.controls['email'].errors['required']">
+                            !
+                            This field is required</div>
+                        <div
+                            *ngIf="loginFormGroup.controls['email'].errors && loginFormGroup.controls['email'].errors['minlength']">
+                            !
+                            Minimum of 8 characters</div>
+                        <div
+                            *ngIf="loginFormGroup.controls['email'].errors && loginFormGroup.controls['email'].errors['pattern']">
+                            !
+                            Enter a valid email id</div>
+                    </div>
+                </div>
+                <div class="form__format">
+                    <label class="label" for="password">Password</label>
+                    <input class="input " type="password" autocomplete id="password" formControlName="password" />
+                    <div *ngIf="loginFormGroup.controls['password'].invalid && (loginFormGroup.controls['password'].dirty || loginFormGroup.controls['password'].touched)"
+                        class="alert--error">
+                        <div *ngIf="loginFormGroup.controls['password'].errors && loginFormGroup.controls['password'].errors['required']">!
+                            This field is required</div>
+                        <div *ngIf="loginFormGroup.controls['password'].errors && loginFormGroup.controls['password'].errors['minlength']">!
+                            Minimum of 8 characters</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__method">
+                <app-button className="button--method" text="Change Method" (btnClick)="changeMethod()"></app-button>
+                <app-button className="button--submit" text="Login" type="button" disabled="!loginFormGroup.valid">
+                </app-button>
+            </div>
+        </form>
+    </div>
+    <img class="card__image" src="./images/authentication.svg" alt="authentication image" />
+</div>

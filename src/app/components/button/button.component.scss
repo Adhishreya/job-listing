@@ -89,6 +89,29 @@
             cursor: pointer;
         }
     }
+
+    &--submit,
+    &--method {
+        font-weight: 700;
+        color:rgb(255, 253, 253);
+        border: none;
+        padding: 1rem 1.5rem;
+        margin: 1rem;
+        border-radius: 0.5rem;
+        background: hwb(180 51% 47%);
+        &:hover {
+            cursor: pointer;
+            background: hwb(222 4% 12%);
+        }
+        &:active{
+            cursor: pointer;
+            background: hwb(240 14% 85%);
+        }
+    }
+
+    // {
+
+    // }
 }
 
 @media screen and(max-width: 768px) {

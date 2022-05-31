@@ -42,7 +42,7 @@ const routerConfigs: Routes = [
     FilterBarComponent,
     DetailsComponent,
     RegisterComponent,
-    ConvertDataPipe
+    ConvertDataPipe,
   ],
   imports: [
     BrowserModule,
