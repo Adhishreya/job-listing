@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
 
   loginFormGroup = this.formBuilder.group(
     { 
-      email: ['',[Validators.required,Validators.minLength(8),Validators.pattern('^[_A-Za-z0-9-+]+(.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$')]] ,
+      email: ['',[Validators.required,Validators.minLength(8),Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")]] ,
       password: ['',[Validators.required,Validators.minLength(8)]] ,
     }
   )

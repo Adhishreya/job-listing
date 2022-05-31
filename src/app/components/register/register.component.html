@@ -91,15 +91,18 @@
                         <div
                             *ngIf="loginFormGroup.controls['email'].errors && loginFormGroup.controls['email'].errors['required']">
                             !
-                            This field is required</div>
+                            This field is required
+                        </div>
                         <div
                             *ngIf="loginFormGroup.controls['email'].errors && loginFormGroup.controls['email'].errors['minlength']">
                             !
-                            Minimum of 8 characters</div>
+                            Minimum of 8 characters
+                        </div>
                         <div
                             *ngIf="loginFormGroup.controls['email'].errors && loginFormGroup.controls['email'].errors['pattern']">
                             !
-                            Enter a valid email id</div>
+                            Enter a valid email id
+                        </div>
                     </div>
                 </div>
                 <div class="form__format">
@@ -107,9 +110,13 @@
                     <input class="input " type="password" autocomplete id="password" formControlName="password" />
                     <div *ngIf="loginFormGroup.controls['password'].invalid && (loginFormGroup.controls['password'].dirty || loginFormGroup.controls['password'].touched)"
                         class="alert--error">
-                        <div *ngIf="loginFormGroup.controls['password'].errors && loginFormGroup.controls['password'].errors['required']">!
+                        <div
+                            *ngIf="loginFormGroup.controls['password'].errors && loginFormGroup.controls['password'].errors['required']">
+                            !
                             This field is required</div>
-                        <div *ngIf="loginFormGroup.controls['password'].errors && loginFormGroup.controls['password'].errors['minlength']">!
+                        <div
+                            *ngIf="loginFormGroup.controls['password'].errors && loginFormGroup.controls['password'].errors['minlength']">
+                            !
                             Minimum of 8 characters</div>
                     </div>
                 </div>

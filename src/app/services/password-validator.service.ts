@@ -11,7 +11,7 @@ export class PasswordValidatorService {
   passwordMatch(password:string,targetPassword:string){
     // const valid = 
     return (control:FormGroup)=>{
-      // const valid = password ===targetPassword;
+      //returns null if valid else retuns a object
       const passwordControl = control.controls[password];
       const targetPasswordControl = control.controls[targetPassword];
       if(!passwordControl||!targetPassword){
@@ -23,7 +23,6 @@ export class PasswordValidatorService {
       else{
         targetPasswordControl.setErrors(null)
       }
-      // return valid ? null:{unmatchedPassword:{value:control.value}};
     }
   }
 }
